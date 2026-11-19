@@ -1,0 +1,16 @@
+{
+  "name": "simple-persian",
+  "interface": {
+    "displayName": "Simple Persian"
+  },
+  "plugins": [
+    {
+      "name": "simple-persian",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

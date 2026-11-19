@@ -1,0 +1,19 @@
+{
+  "description": "Load Simple Persian rules automatically for each Codex session.",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "^(startup|resume|clear|compact)$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "[ -n \"${PLUGIN_ROOT}\" ] && node \"${PLUGIN_ROOT}/src/hooks/simple-persian-activate.js\" || true",
+            "timeout": 5,
+            "statusMessage": "Loading Simple Persian...",
+            "additionalContextLimit": 0
+          }
+        ]
+      }
+    ]
+  }
+}

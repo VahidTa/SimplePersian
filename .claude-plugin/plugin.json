@@ -1,0 +1,59 @@
+{
+  "name": "simple-persian",
+  "displayName": "Simple Persian",
+  "description": "Write plain, unambiguous Persian prose inspired by ASD-STE100 Simplified Technical English: short sentences, active voice, one word one meaning, condition before command, terms defined at first use.",
+  "version": "1.0.0",
+  "author": {
+    "name": "VahidTa"
+  },
+  "homepage": "https://github.com/VahidTa/SimplePersian",
+  "repository": "https://github.com/VahidTa/SimplePersian",
+  "license": "Apache-2.0",
+  "keywords": [
+    "technical-writing",
+    "documentation",
+    "persian",
+    "farsi",
+    "plain-persian",
+    "ste",
+    "asd-ste100"
+  ],
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/src/hooks/simple-persian-activate.js\"",
+            "timeout": 5,
+            "statusMessage": "Loading Simple Persian..."
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/src/hooks/lint_hook.py\"",
+            "timeout": 10,
+            "statusMessage": "Simple Persian: checking the file..."
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/src/hooks/lint_hook.py\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

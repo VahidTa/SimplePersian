@@ -1,0 +1,32 @@
+{
+  "name": "simple-persian",
+  "owner": {
+    "name": "VahidTa",
+    "url": "https://github.com/VahidTa"
+  },
+  "description": "Simple Persian skill for clear, unambiguous Persian technical writing inspired by ASD-STE100.",
+  "plugins": [
+    {
+      "name": "simple-persian",
+      "source": "./",
+      "displayName": "Simple Persian",
+      "description": "Write plain, unambiguous Persian prose inspired by ASD-STE100 Simplified Technical English: short sentences, active voice, one word one meaning, condition before command, terms defined at first use.",
+      "version": "1.0.0",
+      "author": {
+        "name": "VahidTa"
+      },
+      "homepage": "https://github.com/VahidTa/SimplePersian",
+      "repository": "https://github.com/VahidTa/SimplePersian",
+      "license": "Apache-2.0",
+      "keywords": [
+        "technical-writing",
+        "documentation",
+        "persian",
+        "farsi",
+        "plain-persian",
+        "ste",
+        "asd-ste100"
+      ]
+    }
+  ]
+}
